@@ -1,4 +1,6 @@
-﻿namespace UserInputApp.Models
+﻿
+using System.ComponentModel.DataAnnotations;
+namespace UserInputApp.Models
 {
     public class InputModel
     {

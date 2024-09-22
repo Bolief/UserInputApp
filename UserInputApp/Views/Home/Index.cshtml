@@ -1,8 +1,18 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@model UserInputApp.Models.InputModel
+@{
+    ViewData["title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Input Form</h1>
+<form asp-action="processInput" method="post">
+    <div>
+        <label asp-for="InputValue"></label>
+        <input asp-for="InputValue" />
+        <span asp-validation-for="InputValue" class="text-danger"></span>
+    </div>
+    <button type="submit"></button>
+</form>
+@if (Model?.InputResult != null)
+{
+    <h2>Result: @Model</h2>
+}
